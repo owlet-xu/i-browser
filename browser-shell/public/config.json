@@ -1,0 +1,15 @@
+{
+  "mainWindowConfig": {
+    "loadURL": "http://localhost:8080",
+    "loadPath": "browser/index.html",
+    "openDevTools": false,
+    "isDebug": false,
+    "frame": false,
+    "resizable": true,
+    "fullScreen": false,
+    "webPreferences": {
+      "nodeIntegration": true,
+      "nativeWindowOpen": true
+    }
+  }
+}

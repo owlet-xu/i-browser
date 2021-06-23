@@ -1,0 +1,39 @@
+{
+  "$schema": "./node_modules/@mesamo/electron-scripts/lib/configs/schema.json",
+  "compilation": {
+    "icon": "public/qiqi.ico",
+    "asar": false,
+    "product": {
+      "appId": "{{666C499D-143A-467A-9807-D1074B73p9d4}",
+      "dirName": "browser-shell",
+      "publisher": "xuguoyuan",
+      "copyright": "Copyright©2020 xuguoyuan, Inc",
+      "arch": "x64",
+      "privileges": "admin"
+    },
+    "assets": [
+      "package.json",
+      "public/config.json"
+    ],
+    "mainProcess": {
+      "main": "src/main.ts",
+      "preload": "src/preload/preload.ts",
+      "tsConfig": "tsconfig.app.json",
+      "tslint": "tslint.json",
+      "externals": {
+        "hiredis": "hiredis"
+      }
+    },
+    "rendererProcess": {
+      "projects": [
+        {
+          "input": "public/dist",
+          "output": "browser"
+        }
+      ]
+    }
+  },
+  "download": {
+    "mirror": "https://npm.taobao.org/mirrors/electron/"
+  }
+}
