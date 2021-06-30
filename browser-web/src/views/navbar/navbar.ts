@@ -43,12 +43,12 @@ export default class Home extends Vue {
     this.$emit('alyzeWeb');
   }
 
-  pre() {
-    // this.webview.executeJavaScript('baiduApi.prePage()');
+  openDevTools() {
+    this.$emit('openDevTools');
   }
 
-  next() {
-    // this.webview.executeJavaScript('baiduApi.nextPage()');
+  handleCommand(command: string) {
+    this.$emit(command);
   }
 
   goBack() {

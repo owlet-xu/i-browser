@@ -20,14 +20,17 @@ export default class Home extends Vue {
   url!: string;
 
   webview!: WebviewTag;
-  data: any; // 分析的结果
+  data = []; // 分析的结果
   showMessage = false;
-  mounted() {
-    console.log(this.url, '-----url');
+  jsStr = '';
+
+  async mounted() {
+    this.jsStr = await getInjectjs('./injectjs/inject.js');
+    console.log('url:', this.url);
     this.webview = this.$refs['myWebView'] as WebviewTag;
     this.webview.addEventListener('new-window', (e: any) => {
       this.setUrl(e.url);
-      console.log(this.url, '-----url');
+      console.log('url:', this.url);
     });
     this.webview.addEventListener('did-finish-load', (e: any) => {
       this.setTitle(this.webview.getTitle());
@@ -42,13 +45,15 @@ export default class Home extends Vue {
     this.webview.loadURL(this.url);
   }
 
+  openDevTools() {
+    this.webview.openDevTools();
+  }
+
   /**
    * 分析网页
    */
   async alyzeWeb() {
-    this.webview.openDevTools();
-    const jsStr = await getInjectjs('./injectjs/inject.js');
-    this.webview.executeJavaScript(jsStr);
+    this.webview.executeJavaScript(this.jsStr);
     this.webview.executeJavaScript('baiduApi.getSearchContent()', false, (res: any) => {
       this.data = res;
       this.showMessage = true;
@@ -62,6 +67,16 @@ export default class Home extends Vue {
 
   goForward() {
     this.webview.goForward();
+  }
+
+  pre() {
+    this.webview.executeJavaScript(this.jsStr);
+    this.webview.executeJavaScript('baiduApi.prePage()');
+  }
+
+  next() {
+    this.webview.executeJavaScript(this.jsStr);
+    this.webview.executeJavaScript('baiduApi.nextPage()');
   }
 
 }

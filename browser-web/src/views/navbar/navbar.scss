@@ -43,6 +43,13 @@
         -webkit-app-region: no-drag;
       }
     }
+    .browser-menus {
+      -webkit-app-region: no-drag;
+      .menu-icon {
+        font-size: 22px;
+        color: white;
+      }
+    }
     .browser-tools {
       flex: 0 0 100px;
       text-align: right;

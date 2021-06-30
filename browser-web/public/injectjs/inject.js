@@ -20,11 +20,11 @@ baiduApi = {
     });
   },
   nextPage: function() {
-    var pageA = document.querySelectorAll('#page>a');
+    var pageA = document.querySelectorAll('#page a');
     pageA[pageA.length - 1].click();
   },
   prePage: function() {
-    var pageA = document.querySelectorAll('#page>a');
+    var pageA = document.querySelectorAll('#page a');
     pageA[0].click();
   },
   /**
