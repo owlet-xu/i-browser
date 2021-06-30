@@ -12,7 +12,7 @@ export default class Home extends Vue {
   name = '';
   title = '';
   url = 'https://www.baidu.com/';
-  searchWorld = '';
+  searchWorld = 'ddd';
   showMessage = false;
   webview!: WebviewTag;
 

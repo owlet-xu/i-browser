@@ -8,8 +8,8 @@
         <span class="app-title" v-if="title" :title="title">{{title}}</span>
       </div>
       <div class="browser-search">
-        <el-input v-model="searchWorld" size="mini" class="search"></el-input>&nbsp;
-        <el-button icon="el-icon-search" circle size="mini" @click="goSearch"></el-button>
+        <el-input class="search-input" v-model="searchWorld" size="mini"></el-input>&nbsp;
+        <el-button class="search-btn" icon="el-icon-search" circle size="mini" @click="goSearch"></el-button>
       </div>
       <div class="browser-tools">
         <button class="ctrl-icon minimize" title="最小化窗口" @click="handleMinimize">-</button>
