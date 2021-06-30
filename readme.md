@@ -2,6 +2,8 @@
 
 ## 功能预览
 
+![yulan](./docs/browser.gif)
+
 ## 打包
 
 本工具分为web端和壳程序，browser-web是web端，browser-shell是壳程序
