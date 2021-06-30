@@ -1,6 +1,6 @@
 import { ipcMain, BrowserWindow } from 'electron';
 
-// import logger from '../common/logger';
+import logger from '../common/logger';
 import { eventQueue } from './event-queue';
 import { IpcEventType } from './ipc-event-type';
 import {

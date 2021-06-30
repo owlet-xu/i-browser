@@ -2,6 +2,7 @@ import { BrowserWindow, app } from 'electron';
 import path from 'path';
 import url from 'url';
 import config from '../lib/config';
+import logger from '../common/logger';
 
 const mainWindowConfig = config.mainWindowConfig;
 const appPath = app.getAppPath();
@@ -34,7 +35,7 @@ export function createMainWindow() {
   });
 
   window.on('close', event => {
-    closeMainWindow();
+    // 渲染进程通知关闭
   });
 
   window.on('closed', () => {

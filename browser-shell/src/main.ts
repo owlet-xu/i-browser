@@ -4,7 +4,7 @@ import logger from './common/logger';
 import { startGlobalErrorHandle } from './common/error-handler';
 import { startAllListeners } from './ipc/ipc-handler';
 import { createMainWindow, openMainWindow, getMainWindow } from './ui/main-window';
-import { InnoSetupUpdater } from './lib/inno-setup-updater';
+// import { InnoSetupUpdater } from './lib/inno-setup-updater';
 
 startGlobalErrorHandle();
 
@@ -16,12 +16,13 @@ if (!app.requestSingleInstanceLock()) {
     createMainWindow();
     openMainWindow();
     startAllListeners();
-    InnoSetupUpdater();
+    // InnoSetupUpdater();
   });
 }
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
+    logger.info('window-all-closed');
     app.quit();
   }
 });

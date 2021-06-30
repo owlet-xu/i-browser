@@ -7,7 +7,7 @@ import { mkDirs } from '../lib/mkdirs';
 
 const { combine, printf, timestamp } = winston.format;
 
-// 用户数据目录
+// 用户数据目录-C:\Users\xuguoyuan\AppData\Roaming\browser-shell
 const userDataDir = app.getPath('userData');
 
 // 用户目录下创建日志目录
