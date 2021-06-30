@@ -51,3 +51,15 @@
 ```
 
 2、点击调试按钮运行调试即可
+
+
+
+## 脚本注入，解析网页
+
+1、编写脚本inject.js：
+
+![inject.jpg](./docs/inject.jpg)
+
+2、在vue页面中注入脚本并使用，得到返回结果
+
+![inject2](./docs/inject2.jpg)
