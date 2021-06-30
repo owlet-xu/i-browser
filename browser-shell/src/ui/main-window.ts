@@ -28,7 +28,7 @@ export function createMainWindow() {
 
   window.on('ready-to-show', () => {
     if (window) {
-      console.log('ready-to-show');
+      logger.info('ready-to-show');
       window.show();
       window.maximize();
     }
